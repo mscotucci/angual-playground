@@ -1,7 +1,7 @@
 import { effect, inject, Injectable } from '@angular/core';
 import { ListUsersService } from '../../list/shell/list-users.service';
 import { EditUserService } from '../../edit/shell/edit-user.service';
-import { LoggerService } from '../../../../logger/logger.service';
+import { LoggerService } from '../../../../shared/logger/logger.service';
 
 @Injectable({ providedIn: 'root' })
 export class UsersFacadeService {

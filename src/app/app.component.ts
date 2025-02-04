@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ToasterWrapperComponent } from './ui/components/toaster/toast-wrapper.component';
-import { LayoutComponent } from './ui/layout/layout.component';
-import { MenuService } from './ui/sidebar/shell/menu.service';
+import { ToasterWrapperComponent } from './shared/ui/components/toaster/toast-wrapper.component';
+import { LayoutComponent } from './shared/ui/layout/layout.component';
+import { MenuService } from './shared/ui/sidebar/shell/menu.service';
 
 @Component({
   standalone: true,

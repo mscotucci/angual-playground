@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { DatepickerComponent } from '../../../ui/components/date-picker/datepicker.component';
 import { UsersFacadeService } from '../shared/shell/users-facade.service';
-import { User } from '../models/user.model';
+import { DatepickerComponent } from '../../../shared/ui/components/date-picker/datepicker.component';
 
 @Component({
   selector: 'app-edit-user',

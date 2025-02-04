@@ -1,5 +1,5 @@
-import { AppConfig } from '../app-config/app-config.types';
-import { LogLevel } from '../logger/logger.config';
+import { AppConfig } from '../shared/app-config/app-config.types';
+import { LogLevel } from '../shared/logger/logger.config';
 
 export const environment: AppConfig & {
   production: boolean;

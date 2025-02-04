@@ -1,7 +1,7 @@
 import { Route } from '@angular/router';
 import { HomeComponent } from './home.component';
-import { NotFoundComponent } from './ui/not-found/not-found.component';
-import { UnauthorizedComponent } from './auth/auth-oidc/ui/components/unauthorized.component';
+import { UnauthorizedComponent } from './shared/auth/auth-oidc/ui/components/unauthorized.component';
+import { NotFoundComponent } from './shared/ui/not-found/not-found.component';
 
 export const appRoutes: Route[] = [
   {

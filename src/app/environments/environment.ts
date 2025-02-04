@@ -2,8 +2,8 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { AppConfig } from '../app-config/app-config.types';
-import { LogLevel } from '../logger/logger.config';
+import { AppConfig } from '../shared/app-config/app-config.types';
+import { LogLevel } from '../shared/logger/logger.config';
 
 export const environment: AppConfig & {
   production: boolean;

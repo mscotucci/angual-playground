@@ -10,10 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { searchInput } from './shell/utility-functions';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
-import { DrawerComponent } from '../../../ui/components/drawer/drawer.component';
 import { User } from '../models/user.model';
-import { LoggerService } from '../../../logger/logger.service';
 import { UsersFacadeService } from '../shared/shell/users-facade.service';
+import { LoggerService } from '../../../shared/logger/logger.service';
+import { DrawerComponent } from '../../../shared/ui/components/drawer/drawer.component';
 
 @Component({
   selector: 'app-list-users',
