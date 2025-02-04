@@ -1,0 +1,14 @@
+<div class="drawer lg:drawer-open">
+    <input id="main-drawer" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col min-h-screen">
+        <app-header class="sticky top-0 z-30  transition-all duration-100"></app-header>
+        <app-main class="flex-1">
+            <ng-content></ng-content>
+        </app-main>
+        <app-footer></app-footer>
+    </div>
+    <div class="drawer-side">
+        <label for="main-drawer" class="drawer-overlay"></label>
+        <app-sidebar class="w-64 h-full bg-base"></app-sidebar>
+    </div>
+</div>

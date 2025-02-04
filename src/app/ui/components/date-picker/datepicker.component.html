@@ -1,0 +1,45 @@
+<div class="relative">
+    <div class="relative">
+        <input type="text" [value]="displayDate || ''" [placeholder]="placeholder()" (click)="toggleCalendar($event)"
+            readonly class="input input-bordered w-full pr-10" />
+        @if (displayDate) {
+        <button class="absolute inset-y-0 right-0 flex items-center pr-3" (click)="clearDate()">
+            <svg-icon name="x-mark" size="20"></svg-icon>
+        </button>
+        }
+    </div>
+    @if (isOpen()) {
+    <div class="absolute z-10 mt-1 w-64 bg-base-100 shadow-xl rounded-box">
+        <div class="flex justify-between items-center p-2">
+            <button class="btn btn-sm btn-ghost" (click)="prevMonth()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <span class="font-bold">{{ monthYear() }}</span>
+            <button class="btn btn-sm btn-ghost" (click)="nextMonth()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-4 h-4 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="grid grid-cols-7 gap-1 p-2">
+            @for (day of weekdays; track day) {
+            <div class="text-center text-xs font-semibold">
+                {{ day }}
+            </div>
+            }
+            @for (date of calendarDays(); track $index) {
+            @if (date) {
+            <button (click)="selectDate(date)" [class.btn-active]="isSelected(date)" [class.btn-primary]="isToday(date)"
+                class="btn btn-sm btn-ghost">
+                {{ date.getDate() }}
+            </button>
+            } @else {
+            <div class="btn btn-sm btn-ghost invisible"></div>
+            }
+            }
+        </div>
+    </div>
+    }
+</div>

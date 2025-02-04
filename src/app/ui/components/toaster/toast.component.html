@@ -1,0 +1,8 @@
+<div class="alert" [class]="{
+    'alert-info': type() === 'info',
+    'alert-warning': type() === 'warning',
+    'alert-error': type() === 'error',
+    'alert-success': type() === 'success',
+  }">
+  <div class="text-wrap max-w-96">{{message()}}</div>
+</div>

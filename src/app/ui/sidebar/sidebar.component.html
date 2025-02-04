@@ -1,0 +1,39 @@
+<aside class="w-64 bg-base-200 h-screen overflow-y-auto">
+    <ul class="menu p-4 w-full">
+        @for (item of menuItems(); track item.id) {
+        <li>
+            @if (item.route) {
+            <a [routerLink]="item.route" routerLinkActive="active">
+                @if (item.icon) {
+                <svg-icon [name]="item.icon" size="20"></svg-icon>
+                }
+                {{ item.label }}
+            </a>
+            } @else {
+            <details>
+                <summary>
+                    @if (item.icon) {
+                    <svg-icon [name]="item.icon" size="20"></svg-icon>
+                    }
+                    {{ item.label }}
+                </summary>
+                @if (item.children && item.children.length > 0) {
+                <ul>
+                    @for (child of item.children; track child.id) {
+                    <li>
+                        <a [routerLink]="child.route" routerLinkActive="active">
+                            @if (child.icon) {
+                            <svg-icon [name]="child.icon" size="20"></svg-icon>
+                            }
+                            {{ child.label }}
+                        </a>
+                    </li>
+                    }
+                </ul>
+                }
+            </details>
+            }
+        </li>
+        }
+    </ul>
+</aside>

@@ -1,0 +1,53 @@
+@if (service.isLoadingUser()) {
+<progress class="progress progress-primary w-11/12"></progress>
+}
+
+@if (service.errorMessageUser()) {
+<div class="alert alert-error">{{ service.errorMessageUser() }}</div>
+}
+@if (service.selectedUser()) {
+<form [formGroup]="patchedForm()" class="">
+    <div class="form-control w-full">
+        <label class="label" for="firstName">
+            <span class="label-text">First Name</span>
+        </label>
+        <input type="text" id="firstName" formControlName="firstName" class="input input-bordered w-full" />
+    </div>
+    <div class="form-control w-full">
+        <label class="label" for="lastName">
+            <span class="label-text">Last Name</span>
+        </label>
+        <input type="text" id="lastName" formControlName="lastName" class="input input-bordered w-full" />
+    </div>
+    <div class="form-control w-full">
+        <label class="label" for="email">
+            <span class="label-text">Email</span>
+        </label>
+        <input type="email" id="email" formControlName="email" class="input input-bordered w-full" />
+    </div>
+    <div class="form-control w-full">
+        <label class="label" for="age">
+            <span class="label-text">Age</span>
+        </label>
+        <input type="number" id="age" formControlName="age" class="input input-bordered w-full" />
+    </div>
+    <div class="form-control w-full">
+        <label class="label" for="username">
+            <span class="label-text">Username</span>
+        </label>
+        <input type="text" id="username" formControlName="username" class="input input-bordered w-full" />
+    </div>
+    <div class="form-control w-full">
+        <label class="label" for="role">
+            <span class="label-text">Role</span>
+        </label>
+        <input type="text" id="role" formControlName="role" class="input input-bordered w-full" />
+    </div>
+    <div class="form-control w-full">
+        <label class="label" for="birthDate">
+            <span class="label-text">Birth Date</span>
+        </label>
+        <fixato-datepicker id="birthDate" formControlName="birthDate" />
+    </div>
+</form>
+}
