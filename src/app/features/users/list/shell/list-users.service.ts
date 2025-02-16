@@ -1,6 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
-import { User } from '../../models/user.model';
+import { ListUserItem } from '../../models/user.model';
 import { PaginatedRequest } from '../../../../shared/http-interactions/models/paginated-request.model';
 import { requestAdapterFactory } from '../../../../shared/http-interactions/shell/request-adapter-factory';
 import { PaginatedResponse } from '../../../../shared/http-interactions/models/paginated-response.models';
@@ -30,7 +30,7 @@ export class ListUsersService {
         filters: { q: request.searchTerm ?? '' },
       } as PaginatedRequest;
       //Execute the request using the request adapter and map the response to appropriate format
-      return this.requestAdapter.executePagination<User>(
+      return this.requestAdapter.executePagination<ListUserItem>(
         this.url,
         paginatedRequest as PaginatedRequest,
         (response) =>
@@ -72,9 +72,9 @@ function resultAdapter(
   page: number,
   pageSize: number,
   response: any
-): PaginatedResponse<User> {
+): PaginatedResponse<ListUserItem> {
   return {
-    items: response.users as User[],
+    items: response.users as ListUserItem[],
     totalCount: response.total,
     page: page,
     pageSize: pageSize,

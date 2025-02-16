@@ -1,0 +1,68 @@
+<div [formGroupName]="formGroupName()" class="space-y-2">
+    <h3>Address</h3>
+    <div class="md:flex md:items-center">
+        <div class="md:w-1/3">
+            <label class="label" for="address">
+                Street:
+            </label>
+        </div>
+        <div class="md:w-2/3">
+            <input formControlName="address" class="input input-bordered w-full">
+        </div>
+    </div>
+
+    <div class="md:flex md:items-center">
+        <div class="md:w-1/3">
+            <label class="label" for="inline-full-name">
+                City:
+            </label>
+        </div>
+        <div class="md:w-2/3">
+            <input formControlName="city" class="input input-bordered w-full">
+        </div>
+    </div>
+
+    <div class="md:flex md:items-center">
+        <div class="md:w-1/3">
+            <label class="label" for="inline-full-name">
+                State:
+            </label>
+        </div>
+        <div class="md:w-2/3">
+            <input formControlName="state" class="input input-bordered w-full">
+        </div>
+    </div>
+
+    <div class="md:flex md:items-center">
+        <div class="md:w-1/3">
+            <label class="label" for="inline-full-name">
+                State code:
+            </label>
+        </div>
+        <div class="md:w-2/3">
+            <input formControlName="stateCode" class="input input-bordered w-full">
+        </div>
+    </div>
+
+    <div class="md:flex md:items-center">
+        <div class="md:w-1/3">
+            <label class="label" for="postalCode">
+                Postal code:
+            </label>
+        </div>
+        <div class="md:w-2/3">
+            <input formControlName="postalCode" class="input input-bordered w-full">
+        </div>
+    </div>
+
+    <div class="md:flex md:items-center">
+        <div class="md:w-1/3">
+            <label class="label" for="inline-full-name">
+                Country:
+            </label>
+        </div>
+        <div class="md:w-2/3">
+            <input formControlName="country" class="input input-bordered w-full">
+        </div>
+    </div>
+</div>

@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { searchInput } from './shell/utility-functions';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
-import { User } from '../models/user.model';
+import { ListUserItem, User } from '../models/user.model';
 import { UsersFacadeService } from '../shared/shell/users-facade.service';
 import { LoggerService } from '../../../shared/logger/logger.service';
 import { DrawerComponent } from '../../../shared/ui/components/drawer/drawer.component';
@@ -72,7 +72,7 @@ export class ListUsersComponent {
    * @param item
    * @see UserResolverService
    */
-  handleEdit(item: User) {
+  handleEdit(item: ListUserItem) {
     this.router.navigate(['edit-user', item.id], {
       relativeTo: this.route,
     });

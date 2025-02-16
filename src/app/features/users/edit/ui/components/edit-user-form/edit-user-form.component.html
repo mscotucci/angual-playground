@@ -1,0 +1,31 @@
+<div class="card bg-base-100 w-96 shadow-xl mt-5">
+    <figure>
+        <img [src]="user().image" alt="Shoes" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">
+            <input type="text" id="firstName" formControlName="firstName" class="input input-bordered w-full" /> -
+            <input type="text" id="lastName" formControlName="lastName" class="input input-bordered w-full" />
+        </h2>
+        <p>{{user().university}}</p>
+        <div class="form-control w-full">
+            <label class="label" for="birthDate">
+                <span class="label-text">Birth Date</span>
+            </label>
+            <fixato-datepicker id="birthDate" formControlName="birthDate" />
+        </div>
+        <div class="collapse border">
+            <input type="checkbox" class="peer" />
+            <div class="collapse-title">
+                Modify Address
+            </div>
+            <div class="collapse-content">
+                <app-address formGroupName="address" />
+            </div>
+        </div>
+        <div class="card-actions justify-end">
+            <div class="badge badge-outline">{{user().phone}}</div>
+            <div class="badge badge-outline">{{user().email}}</div>
+        </div>
+    </div>
+</div>

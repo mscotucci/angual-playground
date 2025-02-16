@@ -27,13 +27,25 @@ export class DummyJsonRequestAdapter implements RequestAdapter {
       );
   }
 
-  execute<T>(
+  executeGet<T>(
     url: string,
     responseAdapter: (response: any) => T
   ): Observable<T> {
     return this.http.get<T>(`${url}`).pipe(
       map((response) => {
         return responseAdapter(response);
+      })
+    );
+  }
+
+  executePut<T>(
+    url: string,
+    body: Partial<T>,
+    responseAdapter: (response: any) => T
+  ): Observable<T> {
+    return this.http.put<T>(`${url}`, body).pipe(
+      map((response) => {
+        return responseAdapter ? responseAdapter(response) : response;
       })
     );
   }

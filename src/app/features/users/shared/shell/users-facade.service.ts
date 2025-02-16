@@ -1,7 +1,9 @@
-import { effect, inject, Injectable } from '@angular/core';
+import { effect, inject, Injectable, signal } from '@angular/core';
 import { ListUsersService } from '../../list/shell/list-users.service';
 import { EditUserService } from '../../edit/shell/edit-user.service';
 import { LoggerService } from '../../../../shared/logger/logger.service';
+import { User } from '../../models/user.model';
+import { UsersState } from '../state/users.state';
 
 @Injectable({ providedIn: 'root' })
 export class UsersFacadeService {
@@ -43,5 +45,9 @@ export class UsersFacadeService {
 
   resetSelectedUser() {
     this.editUserService.resetEdit();
+  }
+
+  updateUser(formData: Partial<User>) {
+    this.editUserService.updateUser(formData);
   }
 }

@@ -9,5 +9,14 @@ export interface RequestAdapter {
     responseAdapter: (response: any) => PaginatedResponse<T>
   ): Observable<PaginatedResponse<T>>;
 
-  execute<T>(url: string, responseAdapter: (response: any) => T): Observable<T>;
+  executeGet<T>(
+    url: string,
+    responseAdapter: (response: any) => T
+  ): Observable<T>;
+
+  executePut<T>(
+    url: string,
+    body: Partial<T>,
+    responseAdapter?: (response: any) => T
+  ): Observable<T>;
 }

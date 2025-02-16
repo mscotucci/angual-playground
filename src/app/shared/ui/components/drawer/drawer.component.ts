@@ -19,14 +19,14 @@ type DrawerPosition = 'left' | 'right';
         class="drawer-toggle"
         [checked]="isOpen()"
       />
-      <div class="drawer-content  min-h-screen">
+      <div class="drawer-content min-h-screen">
         <ng-content select="[drawerContent]"></ng-content>
       </div>
       <div class="drawer-side">
         <label for="drawer" class="drawer-overlay"></label>
-        <div class="bg-base-200 text-base-content" [style.width.px]="width()">
+        <div>
           <button
-            class="btn btn-sm btn-primary btn-circle absolute right-5 top-5"
+            class="btn btn-sm btn-ghost btn-circle absolute right-5 top-5"
             (click)="closeDrawer()"
           >
             ✕
@@ -39,7 +39,6 @@ type DrawerPosition = 'left' | 'right';
 })
 export class DrawerComponent {
   isOpen = input.required<boolean>();
-  width = input<number>(320);
   position = input<DrawerPosition>('right');
 
   @Output() isOpenChange = new EventEmitter<boolean>();

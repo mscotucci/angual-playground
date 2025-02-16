@@ -1,0 +1,18 @@
+<div class="card bg-base-100 w-96 shadow-xl mt-5">
+    <figure>
+        <img [src]="user().image" alt="Shoes" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">
+            {{user().firstName}} - {{user().lastName}}
+            <div class="badge badge-secondary">{{user().company.department}}</div>
+        </h2>
+        <p>{{user().university}}</p>
+        <p>{{user().birthDate | date}}</p>
+
+        <div class="card-actions justify-end">
+            <div class="badge badge-outline">{{user().phone}}</div>
+            <div class="badge badge-outline">{{user().email}}</div>
+        </div>
+    </div>
+</div>

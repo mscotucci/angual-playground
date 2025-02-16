@@ -84,3 +84,8 @@ export interface Crypto {
   wallet: string;
   network: string;
 }
+
+export type ListUserItem = Pick<
+  User,
+  'id' | 'firstName' | 'lastName' | 'email' | 'phone' | 'role' | 'username'
+>;

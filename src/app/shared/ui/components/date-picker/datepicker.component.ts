@@ -4,7 +4,6 @@ import {
   output,
   signal,
   computed,
-  model,
   forwardRef,
   ElementRef,
   HostListener,
