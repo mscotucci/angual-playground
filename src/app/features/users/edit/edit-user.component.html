@@ -9,12 +9,7 @@
 @if (selectedUser) {
 <form [formGroup]="patchedForm()">
 
-    @if(!isEdit()){
-    <app-details-user-form [user]="selectedUser" />
-    }@else {
-    <app-edit-user-form [user]="selectedUser" />
-    }
-    <div class="flex justify-end space-x-2 mt-4">
+    <div class="flex space-x-2 mt-4">
         @if(isEdit()){
         <button class="btn btn-sm btn-outline btn-primary" (click)="handleSave()">Save</button>
         <button class="btn btn-sm btn-outline btn-secondary" (click)="toggleEdit()">Cancel</button>
@@ -22,5 +17,10 @@
         <button class="btn btn-sm btn-outline btn-primary" (click)="toggleEdit()">Edit</button>
         }
     </div>
+    @if(!isEdit()){
+    <app-details-user-form [user]="selectedUser" />
+    }@else {
+    <app-edit-user-form [user]="selectedUser" />
+    }
 </form>
 }
