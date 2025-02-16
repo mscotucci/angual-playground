@@ -16,19 +16,13 @@ export class AppComponent {
 
   constructor() {
     this.menuService.setMenuItems([
-      { id: 'home', label: 'Home', icon: 'home', route: '/home' },
-      { id: 'users', label: 'Users', icon: 'users', route: '/users' },
+      { id: 'home', label: 'Home', icon: 'home', route: '' },
       {
-        id: 'assessments',
-        label: 'Assessments',
+        id: 'dummy-json',
+        label: 'Dummy Json',
         icon: 'users',
         children: [
-          {
-            id: 'maturity-assessments',
-            label: 'Assessment di maturità',
-            icon: 'film',
-            route: '/maturity-assessments',
-          },
+          { id: 'users', label: 'Users', icon: 'users', route: '/users' },
         ],
       },
       {
